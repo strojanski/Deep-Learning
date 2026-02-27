@@ -102,7 +102,7 @@ class Network(object):
                 self.biases[i] -= eta * gb[i]
         elif self.optimizer == "adam":
             ########### Implement the update function for Adam:
-            self.t += 1  # increment timestep
+            self.t += 1 
             for i in range(len(self.weights)):
 
                 self.mw[i] = self.beta1 * self.mw[i] + (1 - self.beta1) * gw[i]
