@@ -1,0 +1,69 @@
+\documentclass{article}
+\pdfpagewidth=8.5in
+\pdfpageheight=11in
+\usepackage{ijcai19}
+
+% Use the postscript times font!
+\usepackage{times}
+\usepackage{soul}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[small]{caption}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+\urlstyle{same}
+
+\title{Deep learning homework template}
+
+\author{
+Student name (ID)
+}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+A short report should be submitted for each homework. The reports should be up to 3 pages long but can be shorter as long as the questions in the tasks are properly answered. 
+
+\section{Image data}
+In some homeworks images should be added to display your qualitative results. This is necessary only in Homework 2.
+
+\begin{figure}[!htb]
+\centering
+  \includegraphics[width=0.8\linewidth]{hw1_nn.pdf}
+\caption{Example image.}
+\label{fig:vqvae}
+\end{figure}
+
+
+\section{Tables}
+You might want to show the results of various experiments in tables as these are the easiest to read.
+\begin{table}[!htb]
+\centering
+\resizebox{1.0 \linewidth}{!}{\begin{tabular}{c c c c c c c}
+\hline
+% & &\multicolumn{5}{c}{Number of segmented training images}\\
+Experiment & Schedule & L2 reg. & Optimizer & LR & Epoch & Cls. Acc.\\ \hline
+Exp. 1  & None & Yes & Adam & 0.001 & 50 & 52\% \\
+Exp. 2  & Step & No & SGD & 0.1 & 50 & 55\% \\
+Exp. 3  & Exponent. & Yes & SGD & 0.2 & 50 & 42\% \\
+Exp. 4  & None & Yes & Adam & 0.001 & 100 & 58\% \\
+Exp. 5  & Step & Yes & Adam & 0.01 & 100 & 18\% \\
+Exp. 6  & Exponent. & Yes & Adam & 0.1 & 200 & 28\% \\
+Exp. 7  & None & Yes & Adam & 0.01 & 200 & 48\% \\
+\hline
+\end{tabular}}
+\caption{Table of random experiments. Not actual results or suggestions. }
+\label{tab:tab1}
+\end{table}
+
+You should also comment the achieved results in the text. Additionally, you should list the architecture of the networks used in the text or in a table. This is mostly relevant for HW1 and some tasks of HW3. 
+
+
+\end{document}
+
