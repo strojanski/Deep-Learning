@@ -4,3 +4,8 @@ __pycache__/**
 *.pckl
 *.pkl
 *.txt
+*/data/**
+*/bird_data/**
+*.jpg
+*jpeg
+*.png
