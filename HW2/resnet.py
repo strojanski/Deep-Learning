@@ -116,10 +116,9 @@ class ResNet18(nn.Module):
 
 class ResNet18FCN(ResNet18):
     """
-    - Drop the classification head (avgpool + fc).
-    - Add a 1x1 conv to project the last feature map to num_classes.
-    - Upsample 32x back to the original input resolution with a single
-      bilinear interpolation (or a learnable ConvTranspose2d).
+    - Drop the classification head.
+    - Add a 1x1 conv -> project the last feature map to num_classes.
+    - Upsample 32x back to the original resolution
     """
 
     def __init__(self, in_channels: int = 3, num_classes: int = 13) -> None:
@@ -212,7 +211,6 @@ class UNet(nn.Module):
 
 
 class UNetColorization(nn.Module):
-    """U-Net: grayscale (1ch) → ab channels (2ch)."""
     def __init__(self):
         super().__init__()
         self.enc1 = DoubleConv(1,   64)
@@ -247,7 +245,7 @@ class UNetColorization(nn.Module):
 
 
 class EncoderDecoderColorization(nn.Module):
-    """Same architecture but NO skip connections."""
+    """Same architecture but no skip connections."""
     def __init__(self):
         super().__init__()
         self.enc1 = DoubleConv(1,   64)
